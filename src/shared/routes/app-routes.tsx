@@ -10,8 +10,8 @@ export const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/pagina-inicial" element={<TermsOfUserContainer />} />
-      <Route path="*" element={<Navigate to="/pagina-inicial" />}/>
+      <Route path="/termos-de-uso" element={<TermsOfUserContainer />} />
+      <Route path="*" element={<Navigate to="/termos-de-uso" />}/>
     </Routes>
   )
 }
