@@ -27,7 +27,7 @@ export const CardWithPhotograph: FC<CardWithPhotographProps> = ({
             <CardActionArea>
             <CardMedia
             component="img"
-            height="140"
+            height="160"
             image={image}
             alt="card image"
             />
