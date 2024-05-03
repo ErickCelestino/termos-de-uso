@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import { PageNavigate } from "../interfaces";
 import { useNavigate } from 'react-router-dom';
-import { AppBar, Avatar, Box, Button, IconButton, Toolbar, Typography, useTheme } from "@mui/material";
+import { AppBar, Avatar, Box, Button, Drawer, IconButton, Toolbar, Typography, useTheme } from "@mui/material";
 
 import logo from '../../assets/Logo.svg'
 
@@ -42,7 +42,7 @@ export const BaseLayout: FC<AppBarProps> = ({
                 </Box>
             </Toolbar>
         </AppBar>
-        <Box sx={{flexGrow: 1, padding: theme.spacing(1)}}>
+        <Box sx={{padding: theme.spacing(1)}}>
             {children}
         </Box>
         </>

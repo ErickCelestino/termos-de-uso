@@ -11,6 +11,7 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/termos-de-uso" element={<TermsOfUserContainer />} />
+      <Route path="/test" element={<div>teste</div>} />
       <Route path="*" element={<Navigate to="/termos-de-uso" />}/>
     </Routes>
   )

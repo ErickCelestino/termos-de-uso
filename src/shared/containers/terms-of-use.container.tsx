@@ -1,10 +1,51 @@
-import { Typography } from '@mui/material'
+import { CardWithPhotograph } from '../components';
+import introducao from '../../assets/Foto_Introducao.jpg';
 import { BaseLayout } from '../layout'
+import { Box } from '@mui/material'
+import { CardWithPhotographProps } from '../interfaces';
 
 export const TermsOfUserContainer = () => {
+
+    const cardListData: CardWithPhotographProps[] = [
+        {
+            image: introducao,
+            preface: 'aaaaaa',
+            title: 'test',
+            to: 'test'
+        },
+        {
+            image: introducao,
+            preface: 'aaaaaa1',
+            title: 'test1',
+            to: 'test'
+        }
+    ]    
     return (
-        <BaseLayout title='Termos de Uso' pages={[{page: 'Contato', to: 'contact'}]}>
-        <Typography># Política de Privacidade para [Nome do Seu Jogo]
+        <BaseLayout title='Termos de Uso' pages={[
+            {page: 'Página Incial', to: 'termos-de-uso'},
+            {page: 'Contato', to: 'contact'}
+        ]}>
+        <Box
+            sx={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center"
+            }}
+        >
+            {
+                cardListData.map((item) => (
+                    <CardWithPhotograph to={item.to} image={item.image} title={item.title} preface={item.preface} />
+                ))
+            }
+        </Box>
+        </BaseLayout>
+    )
+}
+
+
+/*
+<Typography># Política de Privacidade para [Nome do Seu Jogo]
 
 ## 1. Introdução
 
@@ -36,6 +77,4 @@ Usamos anúncios para financiar o [Nome do Seu Jogo] e torná-lo gratuito para v
 
 Se você tiver alguma dúvida ou comentário sobre esta Política de Privacidade, entre em contato conosco em: [Seu endereço de e-mail]
 </Typography>
-        </BaseLayout>
-    )
-}
+*/
