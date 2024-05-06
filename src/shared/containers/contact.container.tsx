@@ -1,15 +1,10 @@
-import { Box, Button, Card, TextField, Typography, useMediaQuery, useTheme } from "@mui/material"
+import { Box, Card, TextField, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { BaseLayout } from "../layout"
 import { FormButton } from "../components";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-
-interface SendContactDto {
-    email: string;
-    suject: string;
-    details: string;
-}
-
+import { SendContactDto } from "../interfaces";
+import { sendEmailService } from "../services";
 
 export const ContactContainer = () => {
     const [loading, setLoading] = useState(false);
@@ -18,7 +13,12 @@ export const ContactContainer = () => {
     const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
     const handleData = async (data: SendContactDto) => {
-        console.log(data)
+        setLoading(false);
+        setLoading(true);
+        setSuccess(false);
+        await sendEmailService(data);
+        setLoading(false);
+        setSuccess(true);
     }
 
     const {
