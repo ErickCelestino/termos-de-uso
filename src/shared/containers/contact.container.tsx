@@ -1,21 +1,51 @@
 import { Box, Button, Card, TextField, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { BaseLayout } from "../layout"
+import { FormButton } from "../components";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+
+interface SendContactDto {
+    email: string;
+    suject: string;
+    details: string;
+}
 
 
 export const ContactContainer = () => {
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
     const theme = useTheme();
     const mdDown = useMediaQuery(theme.breakpoints.down('md'));
+
+    const handleData = async (data: SendContactDto) => {
+        console.log(data)
+    }
+
+    const {
+        handleSubmit,
+        register,
+      } = useForm<SendContactDto>({
+        mode: 'all',
+        criteriaMode: 'all',
+        defaultValues: {
+          email: '',
+          suject: '',
+          details: '',
+        },
+      });
     return (
         <BaseLayout title='Contato'>
             <Box 
+                component="form"
                 width="100%"
-                height="83vh"
+                height={theme.spacing(63)}
                 display="flex"
                 justifyContent="center"
                 alignContent="center"
+                onSubmit={handleSubmit(handleData)}
             >
                 <Card sx={{
-                    width: mdDown ? theme.spacing(80) : theme.spacing(110)
+                    width: mdDown ? theme.spacing(80) : theme.spacing(105)
                 }}>
                     <Box 
                         width="100%"
@@ -27,7 +57,7 @@ export const ContactContainer = () => {
                         textAlign="center"
                     >
                         <Box
-                            width="70%"
+                            width={mdDown ? "70%" : "80%"}
                             padding={theme.spacing(2)}
                             
                         >
@@ -39,38 +69,36 @@ export const ContactContainer = () => {
 
                             <TextField
                                 autoFocus
-                                id="email"
                                 margin="normal"
                                 fullWidth 
                                 placeholder="E-mail"
                                 label="Digite seu E-mail"
+                                {...register('email')}
                             />
 
                             <TextField
-                                id="suject"
                                 margin="normal"
                                 fullWidth 
                                 placeholder="Assunto"
                                 label="Digite o assunto"
+                                {...register('suject')}
                             />
 
                             <TextField
-                                id="details"
                                 margin="normal"
                                 fullWidth 
                                 placeholder="Detalhes"
                                 multiline
                                 rows={5}
                                 label="Digite os detalhes do assunto"
+                                {...register('details')}
                             />
 
-                            <Button 
-                                sx={{
-                                    height: theme.spacing(5)
-                                }} 
-                                variant="contained" 
-                                fullWidth
-                            >Enviar</Button>
+                            <FormButton
+                                success={success}
+                                loading={loading}
+                                buttonTitle="Enviar"
+                            />
                         </Box>
                     </Box>
             </Card>
