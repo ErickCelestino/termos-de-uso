@@ -14,10 +14,7 @@ export const DetailsTermContainer: FC<DetailsTermContainerProps> = ({
     const theme = useTheme();
     const smDown = useMediaQuery(theme.breakpoints.down('sm'));
     return (
-        <BaseLayout title='Detalhes' pages={[
-            {page: 'Página Incial', to: 'termos-de-uso'},
-            {page: 'Contato', to: 'contact'}
-        ]}>
+        <BaseLayout title='Detalhes'>
             <Box 
                 width="100%"
                 display="flex"

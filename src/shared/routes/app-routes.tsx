@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom"
-import { DetailsTermContainer, TermsOfUserContainer } from "../containers";
+import { ContactContainer, DetailsTermContainer, TermsOfUserContainer } from "../containers";
 import { Typography, useTheme } from "@mui/material";
 
 export const AppRoutes = () => {
@@ -39,6 +39,11 @@ export const AppRoutes = () => {
         }
       />
       <Route path="*" element={<Navigate to="/termos-de-uso" />}/>
+
+      <Route
+        path="/contact"
+        element={<ContactContainer />}
+      />
     </Routes>
   )
 }

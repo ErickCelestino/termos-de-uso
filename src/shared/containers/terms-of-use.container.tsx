@@ -36,10 +36,7 @@ export const TermsOfUserContainer = () => {
         }
     ]    
     return (
-        <BaseLayout title='Termos de Uso' pages={[
-            {page: 'Página Incial', to: 'termos-de-uso'},
-            {page: 'Contato', to: 'contact'}
-        ]}>
+        <BaseLayout title='Termos de Uso'>
         <Box
             sx={{
                 width: "100%",

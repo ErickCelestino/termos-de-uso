@@ -9,13 +9,16 @@ import { useAppThemeContext } from "../context";
 interface AppBarProps {
     title: string;
     children: ReactNode;
-    pages: PageNavigate[]
+    pages?: PageNavigate[]
 }
 
 export const BaseLayout: FC<AppBarProps> = ({
     title,
     children,
-    pages
+    pages = [
+        {page: 'Página Incial', to: 'termos-de-uso'},
+        {page: 'Contato', to: 'contact'}
+    ]
 }) => {    
     const theme = useTheme()
     const navigate = useNavigate();
@@ -23,10 +26,6 @@ export const BaseLayout: FC<AppBarProps> = ({
 
     const redirectToHome = () => {
         navigate('/')
-    }
-
-    const navigateTo = (page: string) => {
-        navigate(page)
     }
 
     return (
