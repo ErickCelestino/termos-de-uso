@@ -29,21 +29,24 @@ export const AppRoutes = () => {
       <Route 
         path="/details-use-information" 
         element={
-          <DetailsTermContainer title="Uso das informações" body="Em Desenvolvimento" />
+          <DetailsTermContainer title="Politica de Anuncios" body="Em Desenvolvimento" />
         }
       />
       <Route 
         path="/details-politic-data" 
         element={
-          <DetailsTermContainer title="Politica de Dados" body="Em Desenvolvimento" />
+          <DetailsTermContainer title="Uso das informações" body="Em Desenvolvimento" />
         }
       />
-      <Route path="*" element={<Navigate to="/termos-de-uso" />}/>
-
+      
       <Route
         path="/contact"
         element={<ContactContainer />}
       />
+
+      <Route path="*" element={<Navigate to="/termos-de-uso" />}/>
+
+
     </Routes>
   )
 }

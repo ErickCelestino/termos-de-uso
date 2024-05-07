@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, MouseEventHandler, ReactNode } from "react";
 import { PageNavigate } from "../interfaces";
 import { useNavigate } from 'react-router-dom';
 import { AppBar, Avatar, Box, Button, Drawer, IconButton, Toolbar, Typography, useTheme } from "@mui/material";
@@ -29,6 +29,10 @@ export const BaseLayout: FC<AppBarProps> = ({
         navigate('/')
     }
 
+    const handleTo = (route: string): MouseEventHandler<HTMLButtonElement> => () => {
+        navigate(`/${route}`);
+    }
+
     return (
         <>
         <AppBar position="static">
@@ -42,8 +46,8 @@ export const BaseLayout: FC<AppBarProps> = ({
                     </Box>
                     <Box sx={{  display: 'flex', flexDirection: 'row'}}>
                         {pages.map((item) => (               
-                        <Button href={item.to} key={item.page} color="inherit">{item.page}</Button>
-                        ))}
+                                <Button onClick={handleTo(item.to)} key={item.page} color="inherit">{item.page}</Button>
+                            ))}
                         <Button sx={{marginLeft: theme.spacing(1)}} variant="outlined" color="inherit" onClick={toggleTheme} startIcon={<DarkMode />}>Trocar Tema</Button>
                     </Box>
                 </Box>
