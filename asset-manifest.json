@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/termos-de-uso/static/js/main.af35e222.js",
+    "main.js": "/termos-de-uso/static/js/main.de41f94b.js",
     "static/js/453.0b7cc475.chunk.js": "/termos-de-uso/static/js/453.0b7cc475.chunk.js",
     "static/media/Foto_Coleta_Dados.png": "/termos-de-uso/static/media/Foto_Coleta_Dados.2184e89ccb74881d1a8a.png",
     "static/media/Logo.svg": "/termos-de-uso/static/media/Logo.48f7dedc8b57dbeb074831fcbfcd0ca0.svg",
@@ -8,10 +8,10 @@
     "static/media/Foto_Uso_Das_Informacoes.jpg": "/termos-de-uso/static/media/Foto_Uso_Das_Informacoes.2d5695b96ea6aaac67a0.jpg",
     "static/media/Foto_Politica_Anuncios.jpg": "/termos-de-uso/static/media/Foto_Politica_Anuncios.b45074ad1d88db864fa4.jpg",
     "index.html": "/termos-de-uso/index.html",
-    "main.af35e222.js.map": "/termos-de-uso/static/js/main.af35e222.js.map",
+    "main.de41f94b.js.map": "/termos-de-uso/static/js/main.de41f94b.js.map",
     "453.0b7cc475.chunk.js.map": "/termos-de-uso/static/js/453.0b7cc475.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.af35e222.js"
+    "static/js/main.de41f94b.js"
   ]
 }
