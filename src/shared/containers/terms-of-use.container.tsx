@@ -1,10 +1,63 @@
-import { Typography } from '@mui/material'
+import { CardWithPhotograph } from '../components';
+import introducao from '../../assets/Foto_Introducao.jpg';
+import colataDados from '../../assets/Foto_Coleta_Dados.png';
+import usoDosDados from '../../assets/Foto_Uso_Das_Informacoes.jpg';
+import politicaDeDados from '../../assets/Foto_Politica_Anuncios.jpg';
 import { BaseLayout } from '../layout'
+import { Box } from '@mui/material'
+import { CardWithPhotographProps } from '../interfaces';
 
 export const TermsOfUserContainer = () => {
+
+    const cardListData: CardWithPhotographProps[] = [
+        {
+            image: introducao,
+            preface: 'Obrigado por escolher nossos jogos. Nós nos comprometemos a proteger a privacidade dos usuários do nosso jogo. Esta Política de Privacidade explica como coletamos, usamos, divulgamos e salvaguardamos suas informações quando você joga nossos jogos.      ',
+            title: 'Introdução',
+            to: 'details-introduction'
+        },
+        {
+            image: colataDados,
+            preface: 'Podemos coletar informações sobre você de várias maneiras. Os dados podem incluir o seguinte: por meio de formulários criados no jogo, por meio de informações legais retiradas da plataforma que você utilizar, etc...',
+            title: 'Coleta de informações',
+            to: 'details-collect-information'
+        },
+        {
+            image: usoDosDados,
+            preface: 'Ter acesso às suas informações nos permite oferecer a você uma melhorar experiência do usuário. Usamos suas informações para: Melhorar, personalizar e expandir o nosso jogo, dentre muitas outras.',
+            title: 'Política de Anúncios',
+            to: 'details-use-information'
+        },
+        {
+            image: politicaDeDados,
+            preface: 'Usamos anúncios para financiar nossos jogos e torná-los gratuitos para você. Trabalhamos com parceiros de publicidade que coletam informações para fornecer anúncios personalizados de acordo com seus interesses.',
+            title: 'Uso de suas informações',
+            to: 'details-politic-data'
+        }
+    ]    
     return (
-        <BaseLayout title='Termos de Uso' pages={[{page: 'Contato', to: 'contact'}]}>
-        <Typography># Política de Privacidade para [Nome do Seu Jogo]
+        <BaseLayout title='Termos de Uso'>
+        <Box
+            sx={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center"
+            }}
+        >
+            {
+                cardListData.map((item) => (
+                    <CardWithPhotograph to={item.to} image={item.image} title={item.title} preface={item.preface} />
+                ))
+            }
+        </Box>
+        </BaseLayout>
+    )
+}
+
+
+/*
+<Typography># Política de Privacidade para [Nome do Seu Jogo]
 
 ## 1. Introdução
 
@@ -36,6 +89,4 @@ Usamos anúncios para financiar o [Nome do Seu Jogo] e torná-lo gratuito para v
 
 Se você tiver alguma dúvida ou comentário sobre esta Política de Privacidade, entre em contato conosco em: [Seu endereço de e-mail]
 </Typography>
-        </BaseLayout>
-    )
-}
+*/
