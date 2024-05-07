@@ -23,19 +23,19 @@ export const AppRoutes = () => {
       <Route 
         path="/details-collect-information" 
         element={
-          <DetailsTermContainer title="Coleta de suas informações" body="aaaa" />
+          <DetailsTermContainer title="Coleta de suas informações" body="Em Desenvolvimento" />
         }
       />
       <Route 
         path="/details-use-information" 
         element={
-          <DetailsTermContainer title="teste" body="aaaa" />
+          <DetailsTermContainer title="Uso das informações" body="Em Desenvolvimento" />
         }
       />
       <Route 
         path="/details-politic-data" 
         element={
-          <DetailsTermContainer title="teste" body="aaaa" />
+          <DetailsTermContainer title="Politica de Dados" body="Em Desenvolvimento" />
         }
       />
       <Route path="*" element={<Navigate to="/termos-de-uso" />}/>
@@ -47,5 +47,3 @@ export const AppRoutes = () => {
     </Routes>
   )
 }
-
-//<div><Button variant="outlined" onClick={toggleTheme} startIcon={<DarkMode />}>Trocar Tema</Button></div>

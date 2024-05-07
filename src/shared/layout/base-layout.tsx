@@ -5,6 +5,7 @@ import { AppBar, Avatar, Box, Button, Drawer, IconButton, Toolbar, Typography, u
 
 import logo from '../../assets/Logo.svg'
 import { useAppThemeContext } from "../context";
+import { DarkMode } from "@mui/icons-material";
 
 interface AppBarProps {
     title: string;
@@ -43,6 +44,7 @@ export const BaseLayout: FC<AppBarProps> = ({
                         {pages.map((item) => (               
                         <Button href={item.to} key={item.page} color="inherit">{item.page}</Button>
                         ))}
+                        <Button sx={{marginLeft: theme.spacing(1)}} variant="outlined" color="inherit" onClick={toggleTheme} startIcon={<DarkMode />}>Trocar Tema</Button>
                     </Box>
                 </Box>
             </Toolbar>
