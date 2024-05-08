@@ -3,7 +3,8 @@ import { Resend } from 'resend';
 
 export const sendEmailService = async (data: SendContactDto) => { 
     try{
-        const resend = new Resend(process.env.SEND_EMAIL_TOKEN);
+        const token = process.env['SEND_EMAIL_TOKEN'];
+        const resend = new Resend(token);
     
         await resend.emails.send({
             from: data.email,

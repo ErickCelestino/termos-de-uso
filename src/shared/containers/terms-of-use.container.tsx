@@ -47,7 +47,7 @@ export const TermsOfUserContainer = () => {
         >
             {
                 cardListData.map((item) => (
-                    <CardWithPhotograph to={item.to} image={item.image} title={item.title} preface={item.preface} />
+                    <CardWithPhotograph to={item.to} key={item.title} image={item.image} title={item.title} preface={item.preface} />
                 ))
             }
         </Box>
